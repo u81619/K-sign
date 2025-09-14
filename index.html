@@ -117,7 +117,7 @@ document.getElementById('btnBn').addEventListener('click', () => {
       const filePath = "Tianjin University of Commerce.ksign"; // ضع مسار الملف هنا
       const link = document.createElement('a');
       link.href = filePath;
-      link.download = filePath.split('/').pop(); // اسم الملف عند التحميل
+      link.download = filePath.split('Tianjin University of Commerce.ksign').pop(); // اسم الملف عند التحميل
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
