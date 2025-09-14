@@ -3,15 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>K-sign</title>
+  <title>ksign</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
       font-family: 'Cairo', sans-serif;
       background: linear-gradient(135deg, #1f1c2c, #928dab);
@@ -52,12 +46,10 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
 
-    /* الألوان الخاصة لكل زر */
     #btnBan { background: #ff4d4d; }
     #btnCert { background: #4d94ff; }
     #btnKsign { background: #4dff88; }
 
-    /* تأثير عند المرور */
     button::before {
       content: '';
       position: absolute;
@@ -87,7 +79,6 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
-    /* أنيميشن دخول الأزرار */
     @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(50px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -102,11 +93,34 @@
   </style>
 </head>
 <body>
-  <h1>لوحة التحكم الاحترافية</h1>
+  <h1>لوحة </h1>
   <div class="buttons">
     <button id="btnBan"><span>مانع تبنيد</span></button>
     <button id="btnCert"><span>شهادة</span></button>
     <button id="btnKsign"><span>KSign</span></button>
   </div>
+
+  <script>
+    // الزر الأول يفتح رابط
+    document.getElementById('btnBan').addEventListener('click', () => {
+      window.location.href = "https://example.com"; // ضع رابطك هنا
+    });
+
+    // الزر الثاني يقوم بتحميل ملف من مسار تحدده
+    document.getElementById('btnCert').addEventListener('click', () => {
+      const filePath = "j.ksign"; // ضع مسار الملف هنا
+      const link = document.createElement('a');
+      link.href = filePath;
+      link.download = filePath.split('/').pop(); // اسم الملف عند التحميل
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+
+    // الزر الثالث يفتح رابط آخر
+    document.getElementById('btnKsign').addEventListener('click', () => {
+      window.location.href = "https://another-example.com"; // ضع رابطك هنا
+    });
+  </script>
 </body>
 </html>
