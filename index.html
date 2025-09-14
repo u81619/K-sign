@@ -96,6 +96,7 @@
   <h1>لوحة </h1>
   <div class="buttons">
     <button id="btnBan"><span>مانع تبنيد</span></button>
+   <button id="btnBn"><span>2 مانع تبنيد</span></button>
     <button id="btnCert"><span>شهادة</span></button>
     <button id="btnKsign"><span>KSign</span></button>
   </div>
@@ -106,6 +107,11 @@
       window.location.href = "https://wsfteam.xyz/files/configurationprofiles/CFDNS-CP144.mobileconfig"; // ضع رابطك هنا
     });
 
+document.getElementById('btnBn').addEventListener('click', () => {
+      window.location.href = "https://applejr.cloud/manual/signed_AppleJr_DNS.mobileconfig"; // ضع رابطك هنا
+    });
+    
+    
     // الزر الثاني يقوم بتحميل ملف من مسار تحدده
     document.getElementById('btnCert').addEventListener('click', () => {
       const filePath = "j.ksign"; // ضع مسار الملف هنا
