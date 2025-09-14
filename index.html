@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K-sign</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      position: relative;
+      padding: 20px 40px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      background: #444;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: 0.4s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    /* الألوان الخاصة لكل زر */
+    #btnBan { background: #ff4d4d; }
+    #btnCert { background: #4d94ff; }
+    #btnKsign { background: #4dff88; }
+
+    /* تأثير عند المرور */
+    button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255,255,255,0.3);
+      transform: translate(-50%, -50%) rotate(45deg);
+      transition: width 0.5s ease, height 0.5s ease;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    button:hover::before {
+      width: 300%;
+      height: 300%;
+    }
+
+    button span {
+      position: relative;
+      z-index: 1;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    /* أنيميشن دخول الأزرار */
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    button {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    #btnCert { animation-delay: 0.2s; }
+    #btnKsign { animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+  <h1>لوحة التحكم الاحترافية</h1>
+  <div class="buttons">
+    <button id="btnBan"><span>مانع تبنيد</span></button>
+    <button id="btnCert"><span>شهادة</span></button>
+    <button id="btnKsign"><span>KSign</span></button>
+  </div>
+</body>
+</html>
